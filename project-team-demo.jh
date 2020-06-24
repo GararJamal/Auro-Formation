@@ -1,0 +1,37 @@
+entity User {
+    EMAIL String,
+    PHONENUMBER String,
+	EMAIL String,
+	PHONENUMBER String,
+	USERNAME String,
+	LASTSEEN Instant,
+	DEACTIVATIONDATE Instant,
+	FIRSTNAME String ,
+	LASTNAME String ,
+	OCCUPATION String, 
+	CITY String ,
+	KIND String,
+    CREATEDBY Integer,
+    CREATEDAT Instant, 
+	UPDATEDBY Integer,
+	UPDATEDAT Instant
+}
+
+entity Role {
+	
+    NAME String,
+	CODE String,
+	DESCRIPTION String,
+	CREATEDBY Integer,
+	CREATEDAT Instant, 
+	UPDATEDBY Integer,
+	UPDATEDAT Instant
+}
+
+relationship ManyToMany {
+  Role{assignedTo(USERNAME)} to User
+}
+
+
+
+
